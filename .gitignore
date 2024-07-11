@@ -1,0 +1,15 @@
+venv/
+.env
+*.db
+*.log
+*.whl
+
+.vscode/
+__pycache__/
+.pytest_cache/
+
+*.egg-info/
+.idea/
+.coverage
+.pyc
+.htaccess
