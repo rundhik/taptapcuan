@@ -5,6 +5,7 @@ TTC (Tap-TapCuan) multi auto claimbot untuk mempermudah cari cuan dari airdrop g
 Daftar game yang sudah tersedia bot auto claim :
 | Game | Link | Petunjuk |
 | ------ |------ | ------ |
+| Pocketfi | [Pocketfi Bot](https://t.me/pocketfi_bot/Mining?startapp=785466139) | [Tutorial Pocketfi Bot](pocketfi/README.md) |
 
 
 ## Petunjuk Umum
@@ -14,6 +15,9 @@ Daftar game yang sudah tersedia bot auto claim :
   ```sh
   pip install --upgrade -r requirements.txt
   ```
+- Git
+  > (Opsional) Jika menggunakan repositori ini menggunakan git. Mempermudah jika ada update tidak perlu download berulang kali.
+
 ### Mendapatkan _User-Agent_ & _query_id_
 #### Android Smartphone
 - Aktifkan mode developer tools pada Android Smartphone
@@ -46,7 +50,7 @@ taptapcuan> cd folder_game
 taptapcuan\folder_game> python <nama_game>.py
 ```
 
-**Happy Cuan!**
+:moneybag: **Happy Cuan!** :money_with_wings:
 
 ## Disclaimer
 > Catatan:
@@ -56,6 +60,12 @@ taptapcuan\folder_game> python <nama_game>.py
 > Jika terjadi error yang disebabkan oleh bug silahkan mengajukan pull-request
 >
 > **Segala sesuatu yang menyebabkan aktivitas dibanned oleh penyedia layanan bukan menjadi tanggung jawab kami**
+
+## Catatan
+> Untuk update terbaru dari repositori ini, bisa melakukan pull-repositori
+  ```sh
+  git pull
+  ```
 
 ## Contact
 | [Telegram](https://t.me/AyasMbois) | [Email](mailto:rundhik@yahoo.co.id) |
