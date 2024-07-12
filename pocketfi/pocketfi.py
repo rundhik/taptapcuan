@@ -131,8 +131,8 @@ def main():
             # Get user mining
             mining = client.get_user_mining()['userMining']
             log(f'{biru}[INFO   ] Username : {kuning}{censor_text(client.username)}')
-            log(f'{biru}[INFO   ] Total token : {kuning}{mining['gotAmount']:,.3f}')
-            log(f'{biru}[INFO   ] Token belum diclaim : {kuning}{mining['miningAmount']:,.3f}')
+            log(f'{biru}[INFO   ] Total token : {kuning}{mining["gotAmount"]:,.3f}')
+            log(f'{biru}[INFO   ] Token belum diclaim : {kuning}{mining["miningAmount"]:,.3f}')
             burn_in = datetime.fromtimestamp(int(mining['dttmClaimDeadline'])/1000) - datetime.now()
             log(f'{merah}[WARNING] Token akan diburn dalam {str(format_timedelta(burn_in))}')
             time.sleep(2)
@@ -148,7 +148,7 @@ def main():
                 daily_task = client.daily_boost()
                 day = int(tasks['currentDay'])
                 log(f'{biru}[INFO   ] Daily login ke {day}')
-                log(f'{biru}[INFO   ] Total reward : {kuning}{tasks['rewardList'][day-1]}')
+                log(f'{biru}[INFO   ] Total reward : {kuning}{tasks["rewardList"][day-1]}')
                 log(f'{biru}[INFO   ] Tugas login harian sudah selesai')
             else:
                 log(f'{biru}[INFO   ] Tugas login harian sudah selesai')
@@ -156,7 +156,7 @@ def main():
             # Claim mining
             log(f'{kuning}[PROSES ] Mengclaim token...')
             claim = client.claim_mining()['userMining']
-            log(f'{biru}[INFO   ] Jumlah token yang diclaim : {kuning}{float(claim['gotAmount']-mining['gotAmount']):,.3f}')
+            log(f'{biru}[INFO   ] Jumlah token yang diclaim : {kuning}{float(claim["gotAmount"]-mining["gotAmount"]):,.3f}')
             log(f'{biru}[INFO   ] Mining akun {censor_text(client.username)} selesai')
             log(f'{kuning}[PROSES ] Memeriksa akun lainnya ...')
             print(line)
