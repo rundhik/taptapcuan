@@ -163,8 +163,12 @@ def main():
             time.sleep(2)
 
         log(f'{biru}[INFO   ] Semua akun selesai diproses')
+        time.sleep(10)
+        welcome_message(game, claim_interval)
+        log(f'{kuning}[INFO   ] Menunggu waktu claim berikutnya')
+
     except Exception as e:
-        log(f'{merah}[ERROR  ] Unch, terjadi kesalahan!')
+        log(f'{merah}[ERROR  ] Gawat, ono sing error lur!')
         log(f'{merah}{e.args[0]}')
 
 def run():

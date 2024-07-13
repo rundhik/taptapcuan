@@ -6,6 +6,7 @@ Daftar game yang sudah tersedia bot auto claim :
 | Game | Link | Petunjuk |
 | ------ |------ | ------ |
 | Pocketfi | [Pocketfi Bot](https://t.me/pocketfi_bot/Mining?startapp=785466139) | [Tutorial Pocketfi Bot](pocketfi/README.md) |
+| Diamore | [Diamore Bot](https://t.me/DiamoreCryptoBot/app?startapp=785466139) | [Tutorial Diamore Bot](diamore/README.md) |
 
 
 ## Petunjuk Umum
