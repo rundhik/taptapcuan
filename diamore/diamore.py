@@ -164,7 +164,7 @@ def main():
                 # Daily bonus
                 log(f'{kuning}[PROSES ] Memeriksa bonus harian...')
                 time.sleep(2)
-                daily_bonus = int(u["dailyBonusAvailable"])
+                daily_bonus = float(u["dailyBonusAvailable"])
                 if daily_bonus > 0:
                     log(f'{kuning}[PROSES ] Mengambil bonus harian...')
                     time.sleep(1)
@@ -183,7 +183,7 @@ def main():
                 log(f'{kuning}[PROSES ] Memeriksa bonus referral...')
                 time.sleep(2)
                 ref = c.referrals()
-                ref_bonus = int(ref["totalAvailableBonuses"])
+                ref_bonus = float(ref["totalAvailableBonuses"])
                 if ref_bonus > 0:
                     log(f'{kuning}[PROSES ] Mengambil bonus referral...')
                     r = c.claim_referral()
