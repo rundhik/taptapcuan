@@ -1,9 +1,13 @@
 ## https://github.com/rundhik/taptapcuan
 ## taptapcuan/helpers.py
 
-import requests, time, urllib.parse, json
+import requests, time, urllib.parse, json, random
 from datetime import datetime
 from colorama import Fore, Style
+from requests.exceptions import (
+    Timeout, ConnectionError, JSONDecodeError,
+    InvalidJSONError, InvalidHeader, MissingSchema
+)
 
 # Constanta
 start_time = datetime.now()
