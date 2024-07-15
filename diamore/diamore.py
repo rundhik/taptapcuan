@@ -39,7 +39,7 @@ class Client(Header):
     '''Client method'''
     def __init__(self, config: dict):
         super().__init__()
-        self.telegramRawData    = config['telegramRawData']
+        self.tgWebAppData    = config['tgWebAppData']
         self.userAgent          = config['User-Agent']
         self.tapLow          = config['tapLow']
         self.tapHigh          = config['tapHigh']
@@ -75,13 +75,13 @@ class Client(Header):
             log(f'{merah}{e.args[0]}')
 
     def _get_userinfo(self):
-        query = {k: json.loads(urllib.parse.unquote(v[0])) if k == 'user' else v[0] for k, v in urllib.parse.parse_qs(self.telegramRawData).items()}
+        query = {k: json.loads(urllib.parse.unquote(v[0])) if k == 'user' else v[0] for k, v in urllib.parse.parse_qs(self.tgWebAppData).items()}
         return query
 
     def user(self):
         url = 'https://diamore-propd.smart-ui.pro/user'
         h = {
-            'Authorization': 'Token '+str(self.telegramRawData)
+            'Authorization': 'Token '+str(self.tgWebAppData)
         }
         m = 'Get user'
         return self._make_request('GET', url, h, success_message=m)
@@ -89,7 +89,7 @@ class Client(Header):
     def visit(self):
         url = 'https://diamore-propd.smart-ui.pro/user/visit'
         h = {
-            'Authorization': 'Token '+str(self.telegramRawData),
+            'Authorization': 'Token '+str(self.tgWebAppData),
             'Content-Length': '0'
         }
         m = 'Get visit'
@@ -98,7 +98,7 @@ class Client(Header):
     def claim_daily(self):
         url = 'https://diamore-propd.smart-ui.pro/user/claim-daily'
         h = {
-            'Authorization': 'Token '+str(self.telegramRawData),
+            'Authorization': 'Token '+str(self.tgWebAppData),
         }
         m = 'Get claim daily'
         return self._make_request('POST', url, h, success_message=m)
@@ -106,7 +106,7 @@ class Client(Header):
     def referrals(self):
         url = 'https://diamore-propd.smart-ui.pro/referral/recruits/'
         h = {
-            'Authorization': 'Token '+str(self.telegramRawData)
+            'Authorization': 'Token '+str(self.tgWebAppData)
         }
         m = 'Get reqruits'
         return self._make_request('GET', url, h, success_message=m)
@@ -114,7 +114,7 @@ class Client(Header):
     def claim_referral(self):
         url = 'https://diamore-propd.smart-ui.pro/referral/claim'
         h = {
-            'Authorization': 'Token '+str(self.telegramRawData),
+            'Authorization': 'Token '+str(self.tgWebAppData),
         }
         m = 'Get claim referral'
         return self._make_request('POST', url, h, success_message=m)
@@ -125,7 +125,7 @@ class Client(Header):
         data = json.dumps(data)
         url = 'https://diamore-propd.smart-ui.pro/user/syncClicks'
         h = {
-            'Authorization': 'Token '+str(self.telegramRawData),
+            'Authorization': 'Token '+str(self.tgWebAppData),
             'Content-Type': 'application/json'
         }
         m = 'Post sync'
